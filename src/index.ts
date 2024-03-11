@@ -14,6 +14,8 @@ async function fetchGoalData(): Promise<AstralObjectMap | undefined> {
   try {
     const response = await fetch(goalURL);
     const data = await response.json();
+    if (data.error)
+      throw new Error("Goal endpoint is not available for this candidate ID.");
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -44,7 +46,6 @@ async function processData(map: AstralObjectMap) {
 // Main function
 async function main() {
   const data = await fetchGoalData();
-
   if (data) {
     await processData(data);
   }
