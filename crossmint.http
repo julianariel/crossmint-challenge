@@ -20,6 +20,15 @@ content-type: application/json
     "row":"2",
     "column":"3"
 }
+###
+POST {{API_URL}}comeths
+content-type: application/json
 
+{
+    "candidateId": "{{candidateID}}",
+    "row":"1",
+    "column":"7",
+    "direction":"right"
+}
 ###
 GET {{API_URL}}map/{{candidateID}}/goal
