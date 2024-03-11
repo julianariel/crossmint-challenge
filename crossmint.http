@@ -1,0 +1,25 @@
+
+@API_URL = https://challenge.crossmint.io/api/
+@candidateID = 1fa26b6a-4f79-48cb-bcde-788a3e29a112
+###
+POST {{API_URL}}polyanets
+content-type: application/json
+
+{
+    "candidateId": "{{candidateID}}",
+    "row":"8",
+    "column":"8"
+}
+
+###
+DELETE {{API_URL}}polyanets
+content-type: application/json
+
+{
+    "candidateId": "{{candidateID}}",
+    "row":"2",
+    "column":"3"
+}
+
+###
+GET {{API_URL}}map/{{candidateID}}/goal
